@@ -9,8 +9,8 @@ import (
 
 	"github.com/sigmonsays/go-apachelog"
 	gologging "github.com/sigmonsays/go-logging"
-	"github.com/sigmonsays/graphspace/config"
-	"github.com/sigmonsays/graphspace/data"
+	"github.com/jmcarbo/graphspace/config"
+	"github.com/jmcarbo/graphspace/data"
 )
 
 type Request struct {

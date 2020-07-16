@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graphspace
+  labels:
+    app: graphspace
+spec:
+  selector:
+    matchLabels:
+      app: graphspace
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        backup.velero.io/backup-volumes: graphspace-persistent-storage
+      labels:
+        app: graphspace
+    spec:
+      containers:
+      - image: jmcarbo/graphspace:1.0
+        name: graphspace
+        volumeMounts:
+        - name: graphspace-persistent-storage
+          mountPath: /var/lib/graphspace/
+      volumes:
+      - name: graphspace-persistent-storage
+        persistentVolumeClaim:
+          claimName: graphspace-pv-claim
+     
+        

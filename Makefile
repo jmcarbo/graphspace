@@ -9,7 +9,7 @@ all:
 
 dev:
 	$(BIN) -debug -pkg data -o data/bindata.go static static/images
-	go install github.com/sigmonsays/graphspace/...
+	go install github.com/jmcarbo/graphspace/...
 
 dep:
 	go get github.com/jteeuwen/go-bindata/go-bindata
@@ -18,8 +18,8 @@ dep:
 	
 docker:
 	# build docker image
-	docker build -t graphspace:latest .
+	docker build -t graphspace:1.0 .
 docker-push:
-	docker tag graphspace:latest sigmonsays/graphspace:latest
-	docker push sigmonsays/graphspace:latest
+	docker tag graphspace:1.0 sigmonsays/graphspace:1.0
+	docker push jmcarbo/graphspace:1.0
 
