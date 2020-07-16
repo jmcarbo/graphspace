@@ -20,6 +20,6 @@ docker:
 	# build docker image
 	docker build -t graphspace:1.0 .
 docker-push:
-	docker tag graphspace:1.0 sigmonsays/graphspace:1.0
+	docker tag graphspace:1.0 jmcarbo/graphspace:1.0
 	docker push jmcarbo/graphspace:1.0
 

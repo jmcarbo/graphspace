@@ -22,7 +22,7 @@ spec:
         name: graphspace
         volumeMounts:
         - name: graphspace-persistent-storage
-          mountPath: /var/lib/graphspace/
+          mountPath: /tmp/graphspace/
       volumes:
       - name: graphspace-persistent-storage
         persistentVolumeClaim:
